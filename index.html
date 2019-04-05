@@ -19,29 +19,6 @@
                 age: 26,
                 originalName: true
             }
-            
-            handleClick = (e) => {
-                e.preventDefault()
-                let newName = 'Sam'
-                let newBool = !this.state.originalName
-
-                if (!this.state.originalName) {
-                    newName = 'Ryu' 
-                }
-
-                this.setState({
-                    name: newName,
-                    originalName: newBool
-                })
-            }
-
-            handleHover = (e) => {
-                console.log("Hover:", event.target)
-            }
-
-            handleCopy = (e) => {
-                console.log("Copy:", event.target)
-            }
 
             render() {
                 return (
