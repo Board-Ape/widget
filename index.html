@@ -14,12 +14,19 @@
 
     <script type="text/babel">
         class App extends React.Component {
-
+            state = {
+                name: 'Ryu',
+                age: 26,
+                originalName: true
+            }
 
             render() {
                 return (
                     <div className="app-content">
                         <h1>Widget set up</h1>
+                        <p>My name is: '{ this.state.name }'. I am '{ this.state.age }' years old</p>
+                        <button onClick={this.handleClick} onMouseOver={this.handleHover}>Click Me</button>
+                        <p onCopy={this.handleCopy}>What we think, we become</p>
                     </div>
                 )
             }
