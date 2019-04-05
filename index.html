@@ -14,12 +14,42 @@
 
     <script type="text/babel">
         class App extends React.Component {
+            state = {
+                name: 'Ryu',
+                age: 26,
+                originalName: true
+            }
+            
+            handleClick = (e) => {
+                e.preventDefault()
+                let newName = 'Sam'
+                let newBool = !this.state.originalName
 
+                if (!this.state.originalName) {
+                    newName = 'Ryu' 
+                }
+
+                this.setState({
+                    name: newName,
+                    originalName: newBool
+                })
+            }
+
+            handleHover = (e) => {
+                console.log("Hover:", event.target)
+            }
+
+            handleCopy = (e) => {
+                console.log("Copy:", event.target)
+            }
 
             render() {
                 return (
                     <div className="app-content">
                         <h1>Widget set up</h1>
+                        <p>My name is: '{ this.state.name }'. I am '{ this.state.age }' years old</p>
+                        <button onClick={this.handleClick} onMouseOver={this.handleHover}>Click Me</button>
+                        <p onCopy={this.handleCopy}>What we think, we become</p>
                     </div>
                 )
             }
